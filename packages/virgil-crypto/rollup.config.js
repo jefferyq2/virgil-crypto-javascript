@@ -24,7 +24,7 @@ const outputDir = path.join(__dirname, 'dist').replaceAll('\\' + '', '/');
 const coreFoundationDir = path.parse(require.resolve('@virgilsecurity/core-foundation')).dir.replaceAll('\\' + '', '/');
 
 const createBrowserEntry = (target, cryptoType, format, declaration = false) => {
-  const foundationEntryPoint = `@virgilsecurity/core-foundation/${getCryptoEntryPointName(TARGET.NODE, cryptoType, format)}`;
+  const foundationEntryPoint = `@virgilsecurity/core-foundation/${getCryptoEntryPointName(target, cryptoType, format)}`;
   return {
     input: path.join(sourceDir, 'index.ts'),
     output: {
